@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TestNameModelStoreContainer" CdmEntityContainer="TestNameEntities">
+    <EntitySetMapping Name="Kullanicis">
+      <EntityTypeMapping TypeName="TestNameModel.Kullanici">
+        <MappingFragment StoreEntitySet="Kullanici">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="KullaniciAdi" ColumnName="KullaniciAdi" />
+          <ScalarProperty Name="KullaniciSifre" ColumnName="KullaniciSifre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ogrencis">
+      <EntityTypeMapping TypeName="TestNameModel.Ogrenci">
+        <MappingFragment StoreEntitySet="Ogrenci">
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="Yas" ColumnName="Yas" />
+          <ScalarProperty Name="Soyad" ColumnName="Soyad" />
+          <ScalarProperty Name="Ad" ColumnName="Ad" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

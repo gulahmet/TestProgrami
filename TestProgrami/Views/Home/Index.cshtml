@@ -1,0 +1,72 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+<script src="~/Scripts/jquery-3.0.0.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<body>
+    <div class="middlePage">
+        <div class="page-header">
+            <h2 class="text-center">Kullanici Giriş</h2>
+            <h2 class="bg-danger">@ViewBag.Mesaj</h2>
+        </div>
+        <div class="container">
+            <br />
+            @*<div class="row mar-bot40">
+                    <div class="col-md-offset-3 col-md-6">
+                        <div class="section-header">
+                            <h2 class="section-heading animated" data-animation="bounceInUp">Contact us</h2>
+                            <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet consectetur, adipisci velit, sed quia non numquam.</p>
+                        </div>
+                    </div>
+                </div>*@
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="cform " id="contact-form">
+                        <div id="sendmessage">
+
+                        </div>
+                        <div id="errormessage"></div>
+                        <br />
+                        @model TestProgrami.Models.Kullanici
+                        @using (Html.BeginForm("Giris", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                            <div class="form-group">
+                                <label for="name" class="float-lg-left">Kullanici Adiniz</label>
+                                <div>
+                                    @Html.TextBoxFor(m => m.KullaniciAdi, new { @class = "form-control", placeholder = "Kullanici Adiniz" })
+                                    @Html.ValidationMessageFor(m => m.KullaniciAdi)
+                                </div>
+                                @*<input type="text" name="name" class="form-control" id="" placeholder="Ad Soyad" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />*@
+
+                                <div class="validation"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="Sifre" class="float-lg-left">Şifrenizi Giriniz</label>
+                                <div>
+                                    @Html.PasswordFor(m => m.KullaniciSifre, new { @class = "form-control", placeholder = "Şifrenizi Giriniz" })
+                                    @Html.ValidationMessageFor(m=>m.KullaniciSifre)
+                                </div>
+
+                            </div>
+                            <input type="submit" class="btn btn-success" value="Gönder" />
+
+                        }
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+@*<link href="~/Scripts/StyleSheet1.css" rel="stylesheet" />*@
+
+
+
+
+
